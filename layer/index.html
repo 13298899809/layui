@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../lib/layui/layui.all.js"></script>
+    <script src="../lib/vue/vue.js-v2.5.16.js"></script>
+</head>
+<body>
+<div id="app">
+    <input type="text" v-model="userName" @blur="checkUserName()">{{msg}}<br>
+    <input type="button" value="提交">
+</div>
+
+<script>
+    var vm = new Vue({
+        el: "#app",
+        data: {
+            msg: "",
+            userName: ""
+        },
+        methods: {
+            checkUserName() {
+                if(this.userName.indexOf("啊")){
+                this.msg = "您输入的用户名不存在 请重新输入"
+                }
+
+            }
+        }
+    })
+</script>
+</body>
+</html>
