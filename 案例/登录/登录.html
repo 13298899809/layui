@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>后台登录</title>
+    <link rel="stylesheet" type="text/css"
+          href="http://www.17sucai.com/preview/33522/2017-10-20/LarryCMS-new/common/layui/css/layui.css" media="all">
+    <link rel="stylesheet" type="text/css" href="login.css" media="all">
+    <link rel="stylesheet" href="../验证码/拼图/jigsaw.css">
+    <script src="canvas-particle.js"></script>
+</head>
+<body id="mydiv" style="overflow: hidden;background-color: #0C0C0C">
+<div class="layui-layout layui-layout-login">
+    <h1>
+        <strong>如歌管理系统后台</strong>
+    </h1>
+    <div class="layui-user-icon larry-login">
+        <input type="text" placeholder="账号" class="login_txtbx"/>
+    </div>
+    <div class="layui-pwd-icon larry-login">
+        <input type="password" placeholder="密码" class="login_txtbx"/>
+    </div>
+    <!--登录验证码-->
+    <div class="container">
+        <div id="captcha" style="position: relative"></div>
+        <div id="msg"></div>
+    </div>
+    <!--结束-->
+</div>
+<script type="text/javascript"
+        src="http://www.17sucai.com/preview/33522/2017-10-20/LarryCMS-new/common/layui/lay/dest/layui.all.js"></script>
+<script src="../验证码/拼图/jigsaw.js"></script>
+<script type="text/javascript">
+    jigsaw.init(document.getElementById('captcha'), function () {
+        document.getElementById('msg').innerHTML = '<font color="#7cfc00">登录成功!</font>'
+    })
+</script>
+<!--粒子动画-->
+<script type="text/javascript">
+    window.onload = function() {
+        //配置
+        var config = {
+            vx: 4,	//小球x轴速度,正为右，负为左
+            vy: 4,	//小球y轴速度
+            height: 2,	//小球高宽，其实为正方形，所以不宜太大
+            width: 2,
+            count: 200,		//点个数
+            color: "121, 162, 185", 	//点颜色
+            stroke: "130,255,255", 		//线条颜色
+            dist: 6000, 	//点吸附距离
+            e_dist: 20000, 	//鼠标吸附加速距离
+            max_conn: 10 	//点到点最大连接数
+        }
+        //调用
+        CanvasParticle(config);
+    }
+</script>
+</body>
+</html>

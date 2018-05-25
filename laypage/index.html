@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>layPage快速使用</title>
+    <link rel="stylesheet" href="../lib/layui/css/layui.css" media="all">
+</head>
+<body>
+
+<div id="demo7"></div>
+<script src="../lib/layui/layui.all.js"></script>
+<script>
+    layui.use('laypage', function(){
+        var laypage = layui.laypage;
+        //完整功能
+        laypage.render({
+            elem: 'demo7'
+            ,count: 100
+            ,layout: ['count', 'prev', 'page', 'next', 'limit', 'refresh', 'skip']
+            ,jump: function(obj){
+                console.log(obj)
+            }
+        });
+    });
+</script>
+</body>
+</html>
